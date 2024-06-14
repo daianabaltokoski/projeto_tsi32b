@@ -10,12 +10,12 @@ function toggleForms() {
 }
 
 // Função para cadastrar um novo usuário
-function cadastrarUsuario() {
+async function cadastrarUsuario() {
   // Trigger Bootstrap form validation
-  const forms = document.querySelectorAll(".needs-validation");
-  Array.prototype.slice.call(forms).forEach(function (form) {
-    form.classList.add("was-validated");
-  });
+  // const forms = document.querySelectorAll(".needs-validation");
+  // Array.prototype.slice.call(forms).forEach(function (form) {
+  //   form.classList.add("was-validated");
+  // });
 
   // Check if the form is valid
   if (document.getElementById("cadastroForm").checkValidity()) {
@@ -46,10 +46,9 @@ function cadastrarUsuario() {
 
     // Salvar os dados do usuário no localStorage
     const novoUsuario = { nome: nome, email: email, senha: senha };
-    localStorage.setItem("usuario", JSON.stringify(novoUsuario));
-
-    alert("Usuário cadastrado com sucesso!");
-    toggleForms(); // Alternar para o formulário de login após o cadastro
+    const _ = await apiCadastraUsuario(novoUsuario);
+      alert("Usuário cadastrado com sucesso!");
+      toggleForms(); // Alternar para o formulário de login após o cadastro
   }
 }
 
@@ -138,3 +137,12 @@ window.onload = function () {
   // Chamar a função de verificação de login ao carregar a página
   verificarLogin();
 };
+
+async function apiCadastraUsuario(novoUsuario) {
+  // { nome: nome, email: email, senha: senha }
+  const resultado = await fetch('http://localhost:3000/users', {
+    method: "POST",
+    headers: {"Content-Type": "application/json" },
+    body: JSON.stringify(novoUsuario),
+  })
+}
