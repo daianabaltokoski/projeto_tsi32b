@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como ler meus livros?</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <body>
+        <header class="text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form class="d-flex justify-content-center mt-3" id="search-form">
+                            <a href="index.html">
+                                <img src="Imagens/logofreelivro.jpg" alt="Logotipo" class="logo" width="170">
+                            </a>
+                            <input class="form-control me-2 search-container" id="search-input" type="search" placeholder="Pesquise por um título ou autor(a)" aria-label="Search">
+                            <button class="btn btn-primary" type="submit">Buscar</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6 text-end align-items-center">
+        <div class="row">
+            <div class="col" id="entreOuCadastrese">
+                <p class="mt-4"><a href="login.html" class="text-decoration-none text-dark"> <i class="fas fa-user" style="color: #00825D;"></i>  Entre ou Cadastre-se</a></p>
+            </div>
+            <div class="col" id="nomeUsuarioWrapper" style="display: none;">
+                <p class="mt-4">Olá, <span id="nomeUsuario"></span> | <a href="#" id="logoutLink">Sair</a></p>
+            </div>
+        </div>
+    </div>
+                </div>
+            </div>
+        </header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fa fa-home"></i>Página inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mais_lidos.html"><i class="fa fa-chart-line"></i>Mais Lidos</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="doacao.html"><i class="fa fa-donate"></i>Faça uma Doação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="como_ler.html"><i class="fa fa-book-reader"></i>Como Ler Meus Livros?</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-4">
+        <div class="row mx-auto">
+            <div class="col-md-6 img-page">
+                <img src="Imagens/comoler.jpg" class="img-fluid img-rounded-10" alt="Como ler">
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="content">
+                    <h2>Leia gratuitamente</h2>
+                    <p>No FreeLivro é possível acessar uma vasta biblioteca online de obras que já são de domínio público. </p>
+                    <p>Acesse os e-books na plataforma online ou, se preferir, baixe e leia offline em um de seus dispositivos.</p>
+                    <p>Escolha os e-books e divirta-se!</p>
+                    <a href="index.html" class="btn btn-primary">Ler agora</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: #00825D;">
+        <div class="container">
+            <div class="row">
+                <!-- Coluna 1 -->
+                <div class="col-md-4">
+                    <h6>Sobre o FreeLivro</h6>
+                    <p><a href="como_ler.html" class="text-white text-decoration-none">Como funciona o FreeLivro?</a></p>
+                </div>
+                <!-- Coluna 2 -->
+                <div class="col-md-4">
+                    <h6>Siga nas Redes Sociais</h6>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/" target="_blank" class="text-white fs-4 me-3 ms-3"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/feed/" target="_blank" class="text-white fs-4 me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank" class="text-white fs-4 me-3"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <!-- Coluna 3 -->
+                <div class="col-md-4">
+                    <h6>Faça uma Doação</h6>
+                    <div class="donation">
+                        <a href="doacao.html" class="fas fa-money-bill-alt text-white me-3 fs-4"></a>
+                        <a href="doacao.html" class="fab fa-cc-visa text-white me-3 fs-4"></a>
+                        <a href="doacao.html" class="fab fa-pix text-white me-3 fs-4"></a>
+                        <a href="doacao.html" class="fas fa-coins text-white fs-4"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="como_ler.js"></script>
+</body>
+</html>

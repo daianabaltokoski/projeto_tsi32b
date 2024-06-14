@@ -1,0 +1,158 @@
+body {
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    background-color: white;
+    padding: 20px 0;
+}
+.navbar {
+    background-color: #00825D;
+    color: white;
+}
+
+.navbar .navbar-brand, .navbar-nav .nav-link {
+    color: white;
+}
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+    background-color: #00543C;
+    color: white !important;
+}
+.navbar-nav .nav-link .fa {
+    margin-right: 12px;
+}
+.carousel-container {
+    margin-top: 20px;
+}
+.carousel-control-prev,
+.carousel-control-next {
+width: 5%;
+}
+main {
+    background-color: #f2efed;
+    flex-grow: 1;
+}
+
+.card-group .card {
+    background-color: white;
+    margin: 10px;
+}
+.card-group {
+    justify-content: center;
+}
+.btn-primary {
+    background-color: #016D60;
+    border-color: #016D60;
+}
+.btn-primary:hover {
+    background-color: #014E4A;
+    border-color: #014E4A;
+}
+
+.donation a {
+    text-decoration: none;
+}
+
+.content {
+    background-color: white;
+    height: 460px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content p {
+    margin-top: 20px;
+}
+
+.content h2 {
+    margin: 30px;
+}
+
+.content .btn {
+    margin-top: auto;
+    margin-bottom: 30px;
+}
+
+.img-page {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.img-rounded-10 {
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #00825D;
+    color: white;
+    padding: 20px 0;
+    margin-top: auto;
+    font-size: 13px;
+}
+
+footer h6 {
+    font-size: 14px;   
+}
+
+/* Estilo para o formulário de doação */
+#donationForm {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    padding-left: 160px;
+    padding-right: 160px;
+}
+
+/* Estilo para as opções de doação */
+#donationForm .mb-3 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para os rótulos das opções */
+#donationForm legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Estilo para as opções de doação */
+#donationForm .form-check {
+    margin-bottom: 10px;
+}
+
+/* Estilo para o botão de doação */
+#donationForm button {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#donationForm h2 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.btn:disabled {
+    background-color: #CCCCCC;
+    color: #555555;
+    border: none; 
+  }
+
+  #successBanner {
+    margin-top: 20px;
+  }
+
+  .card-img-top {
+    height: 25rem;
+    object-fit: cover;
+}

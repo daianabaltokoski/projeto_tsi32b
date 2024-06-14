@@ -1,0 +1,140 @@
+// Função para alternar entre os formulários de login e cadastro
+function toggleForms() {
+  const loginForm = document.getElementById("loginFormContainer");
+  const cadastroForm = document.getElementById("cadastroFormContainer");
+
+  loginForm.style.display =
+    loginForm.style.display === "none" ? "block" : "none";
+  cadastroForm.style.display =
+    cadastroForm.style.display === "none" ? "block" : "none";
+}
+
+// Função para cadastrar um novo usuário
+function cadastrarUsuario() {
+  // Trigger Bootstrap form validation
+  const forms = document.querySelectorAll(".needs-validation");
+  Array.prototype.slice.call(forms).forEach(function (form) {
+    form.classList.add("was-validated");
+  });
+
+  // Check if the form is valid
+  if (document.getElementById("cadastroForm").checkValidity()) {
+    const nome = document.getElementById("cadastroNome").value.trim();
+    const email = document.getElementById("cadastroEmail").value.trim();
+    const senha = document.getElementById("cadastroPassword").value.trim();
+
+    const nameRegex = /^[a-zA-Z\s]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const senhaRegex = /^\S{3,}$/;
+
+    if (!nameRegex.test(nome)) {
+      alert("Por favor, insira um nome válido (apenas letras e espaços).");
+      return;
+    }
+
+    if (!emailRegex.test(email)) {
+      alert("Por favor, insira um email válido.");
+      return;
+    }
+
+    if (!senhaRegex.test(senha)) {
+      alert(
+        "A senha deve ter no mínimo 3 caracteres e não deve conter espaços."
+      );
+      return;
+    }
+
+    // Salvar os dados do usuário no localStorage
+    const novoUsuario = { nome: nome, email: email, senha: senha };
+    localStorage.setItem("usuario", JSON.stringify(novoUsuario));
+
+    alert("Usuário cadastrado com sucesso!");
+    toggleForms(); // Alternar para o formulário de login após o cadastro
+  }
+}
+
+// Função para realizar o login
+function realizarLogin() {
+  // Trigger Bootstrap form validation
+  const forms = document.querySelectorAll(".needs-validation");
+  Array.prototype.slice.call(forms).forEach(function (form) {
+    form.classList.add("was-validated");
+  });
+
+  // Check if the form is valid
+  if (document.getElementById("loginForm").checkValidity()) {
+    const email = document.getElementById("loginEmail").value.trim();
+    const senha = document.getElementById("loginPassword").value.trim();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const senhaRegex = /^\S{3,}$/;
+
+    if (!emailRegex.test(email)) {
+      alert("Por favor, insira um email válido.");
+      return;
+    }
+
+    if (!senhaRegex.test(senha)) {
+      alert(
+        "A senha deve ter no mínimo 3 caracteres e não deve conter espaços."
+      );
+      return;
+    }
+
+    // Recuperar o usuário armazenado no localStorage
+    const usuarioArmazenado = localStorage.getItem("usuario");
+
+    // Verificar se o usuário existe e se as credenciais estão corretas
+    if (usuarioArmazenado) {
+      const usuario = JSON.parse(usuarioArmazenado);
+      if (email === usuario.email && senha === usuario.senha) {
+        // Exibir uma mensagem de sucesso
+        alert("Login bem-sucedido!");
+        localStorage.setItem("isLoggedIn", true);
+        window.location.href = "index.html"; // Redirecionar o usuário para a página inicial
+      } else {
+        alert("Email ou senha incorretos. Por favor, tente novamente.");
+        localStorage.setItem("isLoggedIn", false);
+      }
+    } else {
+      alert("Usuário não encontrado. Por favor, cadastre-se.");
+    }
+  }
+}
+
+window.onload = function () {
+  // Event listener para o link "Cadastre-se aqui"
+  document
+    .getElementById("showCadastro")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      toggleForms();
+    });
+
+  // Event listener para o link "Faça login aqui"
+  document
+    .getElementById("showLogin")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      toggleForms();
+    });
+
+  // Event listener para o formulário de login
+  document
+    .getElementById("loginForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+      realizarLogin();
+    });
+
+  // Event listener para o formulário de cadastro
+  document
+    .getElementById("cadastroForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+      cadastrarUsuario();
+    });
+
+  // Chamar a função de verificação de login ao carregar a página
+  verificarLogin();
+};

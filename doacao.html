@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça uma doação</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <body>
+        <header class="text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form class="d-flex justify-content-center mt-3" id="search-form">
+                            <a href="index.html">
+                                <img src="Imagens/logofreelivro.jpg" alt="Logotipo" class="logo" width="170">
+                            </a>
+                            <input class="form-control me-2 search-container" id="search-input" type="search" placeholder="Pesquise por um título ou autor(a)" aria-label="Search">
+                            <button class="btn btn-primary" type="submit">Buscar</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6 text-end align-items-center">
+        <div class="row">
+            <div class="col" id="entreOuCadastrese">
+                <p class="mt-4"><a href="login.html" class="text-decoration-none text-dark"> <i class="fas fa-user" style="color: #00825D;"></i>  Entre ou Cadastre-se</a></p>
+            </div>
+            <div class="col" id="nomeUsuarioWrapper" style="display: none;">
+                <p class="mt-4">Olá, <span id="nomeUsuario"></span> | <a href="#" id="logoutLink">Sair</a></p>
+            </div>
+        </div>
+    </div>
+                </div>
+            </div>
+        </header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fa fa-home"></i>Página inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mais_lidos.html"><i class="fa fa-chart-line"></i>Mais Lidos</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="fa fa-donate"></i>Faça uma Doação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="como_ler.html"><i class="fa fa-book-reader"></i>Como Ler Meus Livros?</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-4">
+        <div id="successBanner" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+            Doação efetuada com sucesso. Muito obrigado!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <div class="row mx-auto">
+            <div class="col-md-6 img-page">
+                <img src="Imagens/doação.jpg" class="img-fluid img-rounded-10" alt="Como ler">
+            </div>
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class="">
+                    <form id="donationForm">
+                        <h2>Faça uma Doação</h2>
+                        <fieldset class="mb-3">
+                            <legend>Nome do Doador</legend>
+                            <input type="text" class="form-control" id="donorName" name="donorName" placeholder="Seu nome">
+                        </fieldset>
+                        <fieldset class="mb-3">
+                            <legend>Valor da Doação</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="donationAmount" id="donation1" value="R$1">
+                                <label class="form-check-label" for="donation1">
+                                    R$1
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="donationAmount" id="donation10" value="R$10">
+                                <label class="form-check-label" for="donation10">
+                                    R$10
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="donationAmount" id="donation50" value="R$50">
+                                <label class="form-check-label" for="donation50">
+                                    R$50
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="donationAmount" id="donation100" value="R$100">
+                                <label class="form-check-label" for="donation100">
+                                    R$100
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="donationAmount" id="otherAmount" value="Outro">
+                                <label class="form-check-label" for="otherAmount">
+                                    Outro Valor
+                                </label>
+                                <input type="text" class="form-control mt-2" id="customAmount" placeholder="Digite o valor">
+                            </div>
+                        </fieldset>
+                        <fieldset class="mb-3" id="paymentMethodSection" style="display: none;">
+                            <legend>Meio de Pagamento</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="credito" value="credito">
+                                <label class="form-check-label" for="credito">
+                                    Cartão de Crédito
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="debito" value="debito">
+                                <label class="form-check-label" for="debito">
+                                    Cartão de Débito
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="pix" value="pix">
+                                <label class="form-check-label" for="pix">
+                                    PIX
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="deposito" value="deposito">
+                                <label class="form-check-label" for="deposito">
+                                    Depósito Bancário
+                                </label>
+                            </div>
+                        </fieldset>
+                        <button type="button" class="btn btn-primary mb-3" id="choosePaymentMethod">Escolher meio de pagamento</button>
+                        <button type="button" class="btn btn-primary" id="openModal" disabled>Doar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+
+    <!-- Modal de Confirmação de Doação -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmationModalLabel">Confirmar Doação</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Você está prestes a fazer uma doação. Deseja continuar?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="confirmDonation">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: #00825D;">
+        <div class="container">
+            <div class="row">
+                <!-- Coluna 1 -->
+                <div class="col-md-4">
+                    <h6>Sobre o FreeLivro</h6>
+                    <p><a href="como_ler.html" class="text-white text-decoration-none">Como funciona o FreeLivro?</a></p>
+                </div>
+                <!-- Coluna 2 -->
+                <div class="col-md-4">
+                    <h6>Siga nas Redes Sociais</h6>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/" target="_blank" class="text-white fs-4 me-3 ms-3"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/feed/" target="_blank" class="text-white fs-4 me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank" class="text-white fs-4 me-3"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <!-- Coluna 3 -->
+                <div class="col-md-4">
+                    <h6>Faça uma Doação</h6>
+                    <div class="donation">
+                        <a href="doacao.html" class="fas fa-money-bill-alt text-white me-3 fs-4"></a>
+                        <a href="doacao.html" class="fab fa-cc-visa text-white me-3 fs-4"></a>
+                        <a href="doacao.html" class="fab fa-pix text-white me-3 fs-4"></a>
+                        <a href="doacao.html" class="fas fa-coins text-white fs-4"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="doacao.js"></script>
+</body>
+</html>
