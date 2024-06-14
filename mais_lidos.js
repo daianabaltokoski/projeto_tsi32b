@@ -48,9 +48,10 @@ async function carregarMaisBaixados() {
 }
 
 // Executar a função ao carregar a página
-window.onload = () => {
+window.addEventListener('load', () => {
+    console.log('mais_lidos.js')
     carregarMaisBaixados();
-};
+});
 
 // Função para verificar se o usuário está logado
 function verificarLogin() {
@@ -68,16 +69,16 @@ function verificarLogin() {
     }
 }
 
-// Função para sair da conta
-function sairDaConta() {
-    // Remover o usuário do localStorage
-    localStorage.removeItem('usuario');
-    // Atualizar a exibição
-    verificarLogin();
-}
+// // Função para sair da conta
+// function sairDaConta() {
+//     // Remover o usuário do localStorage
+//     localStorage.removeItem('usuario');
+//     // Atualizar a exibição
+//     verificarLogin();
+// }
 
 // Event listener para o botão "Sair"
-document.getElementById('logoutLink').addEventListener('click', sairDaConta);
+// document.getElementById('logoutLink').addEventListener('click', sairDaConta);
 
 // Chamar a função de verificação de login ao carregar a página
 verificarLogin();

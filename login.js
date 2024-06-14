@@ -12,10 +12,10 @@ function toggleForms() {
 // Função para cadastrar um novo usuário
 async function cadastrarUsuario() {
   // Trigger Bootstrap form validation
-  // const forms = document.querySelectorAll(".needs-validation");
-  // Array.prototype.slice.call(forms).forEach(function (form) {
-  //   form.classList.add("was-validated");
-  // });
+  const forms = document.querySelectorAll(".needs-validation");
+  Array.prototype.slice.call(forms).forEach(function (form) {
+    form.classList.add("was-validated");
+  });
 
   // Check if the form is valid
   if (document.getElementById("cadastroForm").checkValidity()) {
@@ -55,10 +55,10 @@ async function cadastrarUsuario() {
 // Função para realizar o login
 async function realizarLogin() {
   // Trigger Bootstrap form validation
-  // const forms = document.querySelectorAll(".needs-validation");
-  // Array.prototype.slice.call(forms).forEach(function (form) {
-  //   form.classList.add("was-validated");
-  // });
+  const forms = document.querySelectorAll(".needs-validation");
+  Array.prototype.slice.call(forms).forEach(function (form) {
+    form.classList.add("was-validated");
+  });
 
   // Check if the form is valid
   if (document.getElementById("loginForm").checkValidity()) {
@@ -99,8 +99,9 @@ async function realizarLogin() {
   }
 }
 
-window.onload = function () {
+window.addEventListener('load', function () {
   // Event listener para o link "Cadastre-se aqui"
+  console.log('login.js')
   document
     .getElementById("showCadastro")
     .addEventListener("click", function (event) {
@@ -134,11 +135,11 @@ window.onload = function () {
 
   // Chamar a função de verificação de login ao carregar a página
   verificarLogin();
-};
+});
 
 async function apiCadastraUsuario(novoUsuario) {
   // { nome: nome, email: email, senha: senha }
-  const resultado = await fetch('http://localhost:3000/users', {
+  const _ = await fetch('http://localhost:3000/users', {
     method: "POST",
     headers: {"Content-Type": "application/json" },
     body: JSON.stringify(novoUsuario),

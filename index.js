@@ -1,4 +1,7 @@
-window.onload = function () {
+let paginaAtual = 0;
+
+window.addEventListener('load', function () {
+  console.log('index.js')
   document
     .getElementById("search-form")
     .addEventListener("submit", function (event) {
@@ -12,13 +15,12 @@ window.onload = function () {
       }
     });
 
-  let paginaAtual = 0;
-
   // Executar a função "carregar" quando a página já estiver carregada
   document.addEventListener("DOMContentLoaded", carregar);
 
   verificarLogin();
-};
+  carregar();
+});
 
 // função para carregar ebooks
 async function carregar() {

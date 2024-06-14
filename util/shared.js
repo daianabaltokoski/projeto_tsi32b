@@ -1,24 +1,24 @@
-window.onload = function () {
-  // Event listener para o link "Sair"
+window.addEventListener('load',
+  function() {
+  console.log('shared.js')
   document
     .getElementById("logoutLink")
     .addEventListener("click", function (event) {
       event.preventDefault();
-      localStorage.setItem("isLoggedIn", false);
+      console.log('clicado')
+      localStorage.removeItem("authUser");
       verificarLogin();
     });
-};
+});
+
 
 // Função para verificar se o usuário está logado
 function verificarLogin() {
-  const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
+  console.log()
+  const authUser = localStorage.getItem("authUser");
 
-  if (isLoggedIn) {
-    let user = localStorage.getItem("usuario");
-    if (user) {
-      user = JSON.parse(user);
-      document.getElementById("nomeUsuario").textContent = user.nome;
-    }
+  if (authUser) {
+    document.getElementById("nomeUsuario").textContent = authUser;
     document.getElementById("entreOuCadastrese").style.display = "none";
 
     document.getElementById("nomeUsuarioWrapper").style.display = "block";

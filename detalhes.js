@@ -57,11 +57,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
-            document.getElementById("favoritar").addEventListener("click", function() {
-                // Adiciona o livro aos favoritos (você pode implementar esta funcionalidade usando armazenamento local ou uma API backend)
-                alert("Livro adicionado aos favoritos!");
-            });
-
         })
         .catch(error => console.error("Erro na Busca:", error));
 });
