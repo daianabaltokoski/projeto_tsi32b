@@ -2,25 +2,12 @@ let paginaAtual = 0;
 
 window.addEventListener('load', function () {
   console.log('index.js')
-  document
-    .getElementById("search-form")
-    .addEventListener("submit", function (event) {
-      event.preventDefault(); // Impede o envio do formulário padrão
-
-      var searchTerm = document.getElementById("search-input").value.trim();
-      if (searchTerm) {
-        window.location.href = `pesquisar.html?q=${encodeURIComponent(
-          searchTerm
-        )}`;
-      }
-    });
-
   // Executar a função "carregar" quando a página já estiver carregada
   document.addEventListener("DOMContentLoaded", carregar);
 
   verificarLogin();
   carregar();
-});
+    });
 
 // função para carregar ebooks
 async function carregar() {

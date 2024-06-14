@@ -17,48 +17,29 @@
   <body>
     <header class="text-center">
       <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <form class="d-flex justify-content-center mt-3" id="search-form">
-              <a href="index.html">
-                <img
-                  src="Imagens/logofreelivro.jpg"
-                  alt="Logotipo"
-                  class="logo"
-                  width="170"
-                />
-              </a>
-              <input
-                class="form-control me-2 search-container"
-                id="search-input"
-                type="search"
-                placeholder="Pesquise por um título ou autor(a)"
-                aria-label="Search"
-              />
-              <button class="btn btn-primary" type="submit">Buscar</button>
-            </form>
-          </div>
-          <div class="col-md-6 text-end align-items-center">
-            <div class="row">
-              <div class="col" id="entreOuCadastrese">
-                <p class="mt-4">
-                  <a href="login.html" class="text-decoration-none text-dark">
-                    <i class="fas fa-user" style="color: #00825d"></i> Entre ou
-                    Cadastre-se</a
-                  >
-                </p>
+          <div class="row">
+              <div class="col-md-6">
+                  <form class="d-flex justify-content-center mt-3" id="search-form" action="pesquisar.html">
+                      <a href="index.html">
+                          <img src="Imagens/logofreelivro.jpg" alt="Logotipo" class="logo" width="170">
+                      </a>
+                      <input class="form-control me-2 search-container" id="search-input" name="q" type="search" placeholder="Pesquise por um título ou autor(a)" aria-label="Search">
+                      <button class="btn btn-primary" type="submit">Buscar</button>
+                  </form>
               </div>
-              <div class="col" id="nomeUsuarioWrapper" style="display: none">
-                <p class="mt-4">
-                  Olá, <span id="nomeUsuario"></span> |
-                  <a href="#" id="logoutLink">Sair</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+              <div class="col-md-6 text-end align-items-center">
+  <div class="row">
+      <div class="col" id="entreOuCadastrese">
+          <p class="mt-4"><a href="login.html" class="text-decoration-none text-dark"> <i class="fas fa-user" style="color: #00825D;"></i>  Entre ou Cadastre-se</a></p>
       </div>
-    </header>
+      <div class="col" id="nomeUsuarioWrapper" style="display: none;">
+          <p class="mt-4">Olá, <span id="nomeUsuario"></span> | <a href="#" id="logoutLink">Sair</a></p>
+      </div>
+  </div>
+</div>
+          </div>
+      </div>
+  </header>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">

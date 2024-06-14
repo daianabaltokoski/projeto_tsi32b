@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     verificarLogin();
     const donationForm = document.getElementById('donationForm');
