@@ -53,12 +53,12 @@ async function cadastrarUsuario() {
 }
 
 // Função para realizar o login
-function realizarLogin() {
+async function realizarLogin() {
   // Trigger Bootstrap form validation
-  const forms = document.querySelectorAll(".needs-validation");
-  Array.prototype.slice.call(forms).forEach(function (form) {
-    form.classList.add("was-validated");
-  });
+  // const forms = document.querySelectorAll(".needs-validation");
+  // Array.prototype.slice.call(forms).forEach(function (form) {
+  //   form.classList.add("was-validated");
+  // });
 
   // Check if the form is valid
   if (document.getElementById("loginForm").checkValidity()) {
@@ -81,19 +81,17 @@ function realizarLogin() {
     }
 
     // Recuperar o usuário armazenado no localStorage
-    const usuarioArmazenado = localStorage.getItem("usuario");
+    const usuario = await apiBuscaUsuario(email);
 
     // Verificar se o usuário existe e se as credenciais estão corretas
-    if (usuarioArmazenado) {
-      const usuario = JSON.parse(usuarioArmazenado);
-      if (email === usuario.email && senha === usuario.senha) {
+    if (usuario) {
+      if (senha === usuario.senha) {
         // Exibir uma mensagem de sucesso
         alert("Login bem-sucedido!");
-        localStorage.setItem("isLoggedIn", true);
+        localStorage.setItem("authUser", usuario.nome);
         window.location.href = "index.html"; // Redirecionar o usuário para a página inicial
       } else {
-        alert("Email ou senha incorretos. Por favor, tente novamente.");
-        localStorage.setItem("isLoggedIn", false);
+        alert("Senha incorreta. Por favor, tente novamente.");
       }
     } else {
       alert("Usuário não encontrado. Por favor, cadastre-se.");
@@ -145,4 +143,14 @@ async function apiCadastraUsuario(novoUsuario) {
     headers: {"Content-Type": "application/json" },
     body: JSON.stringify(novoUsuario),
   })
+}
+
+async function apiBuscaUsuario(email) {
+  const url = `http://localhost:3000/users?email=${email}`;
+  const result = await fetch(url);
+  const json = await result.json();
+  if (json.length > 0) {
+    return json[0];
+  }
+  return false;
 }
