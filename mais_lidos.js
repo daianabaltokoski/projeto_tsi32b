@@ -43,15 +43,19 @@ function handleDetalhesClick(ebookId) {
     if (verificarLogin()) {
         window.location.href = `detalhes.html?id=${ebookId}`;
     } else {
-        const loginToast = new bootstrap.Toast(document.getElementById('loginToast'));
-        loginToast.show();
-
-        // Define um temporizador para redirecionar para a página de login após 3 segundos
-        setTimeout(() => {
+        Swal.fire({
+            title: 'Faça login',
+            text: 'Você precisa estar logado para acessar esta página.',
+            icon: 'warning',
+            timer: 2500,
+            timerProgressBar: true,
+            showConfirmButton: false
+        }).then(() => {
             window.location.href = 'login.html';
-        }, 3000);
+        });
     }
 }
+
 
 // Executar a função ao carregar a página
 window.addEventListener('load', () => {
