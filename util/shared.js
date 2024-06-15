@@ -26,4 +26,6 @@ function verificarLogin() {
     document.getElementById("entreOuCadastrese").style.display = "block";
     document.getElementById("nomeUsuarioWrapper").style.display = "none";
   }
+
+  return !!authUser
 }

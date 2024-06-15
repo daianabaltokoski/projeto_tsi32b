@@ -45,7 +45,8 @@ function addEbook(ebook) {
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title">${title}</h5>
                     <p class="card-text mb-auto">${authorName}</p>
-                    <a href="detalhes.html?id=${ebook.id}" class="btn btn-primary mt-auto">Detalhes</a> 
+                   <a href="detalhes.html?id=${ebook.id}" class="btn btn-primary mt-auto" onclick="handleDetalhesClick(${ebook.id}); return false;">Detalhes</a>
+ 
                 </div>
             </div>
         </div>
@@ -54,4 +55,19 @@ function addEbook(ebook) {
   // Adiciona o card ao contêiner de cards
   const cardsContainer = document.getElementById("cards-container");
   cardsContainer.innerHTML += cardHtml;
+}
+
+function handleDetalhesClick(ebookId) {
+  if (verificarLogin()) {
+    window.location.href = `detalhes.html?id=${ebookId}`;
+
+  } else {
+    const loginToast = new bootstrap.Toast(document.getElementById('loginToast'));
+    loginToast.show();
+
+    // Define um temporizador para redirecionar para a página de login após 3 segundos
+    setTimeout(() => {
+      window.location.href = 'login.html';
+    }, 3000);
+  }
 }
