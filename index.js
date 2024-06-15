@@ -39,7 +39,7 @@ function addEbook(ebook) {
   const cardHtml = `
         <div class="col-md-3 mb-4">
             <div class="card h-100">
-                <a href="detalhes.html?id=${ebook.id}"> 
+                <a href="detalhes.html?id=${ebook.id}" onclick="handleDetalhesClick(${ebook.id}); return false;"> 
                     <img src="${coverImage}" class="card-img-top" alt="Capa do Livro">
                 </a>
                 <div class="card-body d-flex flex-column">

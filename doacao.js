@@ -24,22 +24,36 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (selectedAmount && selectedPaymentMethod) {
-            const confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
-            confirmationModal.show();
+            // Configuração do SweetAlert2
+            Swal.fire({
+                title: "<strong>Confirmar Doação</strong>",
+                icon: "info",
+                html: `
+                    Você está prestes a fazer uma doação. Deseja continuar?
+                `,
+                showCloseButton: true,
+                showCancelButton: true,
+                focusConfirm: false,
+                confirmButtonText: `
+                    Confirmar
+                `,
+                confirmButtonAriaLabel: "Confirmar doação",
+                cancelButtonText: `
+                    Cancelar
+                `,
+                cancelButtonAriaLabel: "Cancelar"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Ação após confirmação
+                    successBanner.style.display = 'block';
+                    setTimeout(function () {
+                        successBanner.style.display = 'none';
+                    }, 5000);
+                }
+            });
         } else {
             alert('Por favor, selecione um valor de doação e um meio de pagamento.');
         }
-    });
-
-    confirmDonationButton.addEventListener('click', function () {
-        const confirmationModal = bootstrap.Modal.getInstance(document.getElementById('confirmationModal'));
-        confirmationModal.hide();
-
-        successBanner.style.display = 'block';
-
-        setTimeout(function() {
-            successBanner.style.display = 'none';
-        }, 5000);
     });
 
     donationForm.addEventListener('change', function () {

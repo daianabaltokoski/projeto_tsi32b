@@ -21,14 +21,14 @@ async function carregarMaisBaixados() {
         const cardHtml = `
             <div class="col-md-3 mb-4">
                 <div class="card h-100">
-                    <a href="detalhes.html?id=${id}">
+                    <a href="detalhes.html?id=${id}" onclick="handleDetalhesClick(${id}); return false;">
                         <img src="${coverImage}" class="card-img-top" alt="Capa do Livro">
                     </a>
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">${title}</h5>
                         <p class="card-text mb-auto">Autor: ${authorName}</p>
                         <p class="card-text">Downloads: ${download_count}</p>
-                        <a href="detalhes.html?id=${id}" class="btn btn-primary mt-auto">Detalhes</a>
+                        <a href="detalhes.html?id=${id}" class="btn btn-primary mt-auto" onclick="handleDetalhesClick(${id}); return false;">Detalhes</a>
                     </div>
                 </div>
             </div>
@@ -36,6 +36,21 @@ async function carregarMaisBaixados() {
 
         container.innerHTML += cardHtml;
     });
+}
+
+// Função para lidar com o clique no botão "Detalhes"
+function handleDetalhesClick(ebookId) {
+    if (verificarLogin()) {
+        window.location.href = `detalhes.html?id=${ebookId}`;
+    } else {
+        const loginToast = new bootstrap.Toast(document.getElementById('loginToast'));
+        loginToast.show();
+
+        // Define um temporizador para redirecionar para a página de login após 3 segundos
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 3000);
+    }
 }
 
 // Executar a função ao carregar a página
