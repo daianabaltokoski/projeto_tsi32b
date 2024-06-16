@@ -15,7 +15,20 @@ async function carregarMaisBaixados() {
     // Adiciona cada livro mais baixado ao contêiner
     mostDownloadedBooks.forEach(book => {
         const { id, title, authors, formats, download_count } = book;
-        const authorName = authors.length > 0 ? authors[0].name : "Autor desconhecido";
+        const authorName = authors.length > 0 ? formatAuthorName(authors[0].name) : "Autor desconhecido";
+
+function formatAuthorName(fullName) {
+    // Dividir o nome completo do autor em partes
+    const nameParts = fullName.split(", ");
+    // Verificar se o nome possui sobrenome
+    if (nameParts.length > 1) {
+        // Formatar como "Nome Sobrenome"
+        return `${nameParts[1]} ${nameParts[0]}`;
+    } else {
+        // Se não houver sobrenome identificado, retornar o nome completo
+        return fullName;
+    }
+}
         const coverImage = formats["image/jpeg"] || "https://placehold.co/230x260/afc/ccc?text=Capa%20do%20Livro";
 
         const cardHtml = `
@@ -26,7 +39,7 @@ async function carregarMaisBaixados() {
                     </a>
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">${title}</h5>
-                        <p class="card-text mb-auto">Autor: ${authorName}</p>
+                        <p class="card-text mb-auto"> ${authorName}</p>
                         <p class="card-text">Downloads: ${download_count}</p>
                         <a href="detalhes.html?id=${id}" class="btn btn-primary mt-auto" onclick="handleDetalhesClick(${id}); return false;">Detalhes</a>
                     </div>
@@ -47,7 +60,7 @@ function handleDetalhesClick(ebookId) {
             title: 'Faça login',
             text: 'Você precisa estar logado para acessar esta página.',
             icon: 'warning',
-            timer: 2500,
+            timer: 3000,
             timerProgressBar: true,
             showConfirmButton: false
         }).then(() => {

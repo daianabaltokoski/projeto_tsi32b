@@ -18,8 +18,13 @@ document.addEventListener("DOMContentLoaded", function() {
             // Atualiza os elementos HTML com os detalhes do livro
             document.getElementById("book-title").textContent = data.title;
             // Verifica se há autores e mostra o primeiro autor
-            document.getElementById("author").textContent = "Autor: " + (data.authors.length > 0 ? data.authors[0].name : "Não informado");
-            document.getElementById("downloads").textContent = "Downloads: " + (data.download_count || 0);
+            if (data.authors.length > 0) {
+                const authorNameParts = data.authors[0].name.split(", ");
+                const authorFormatted = `${authorNameParts[1]} ${authorNameParts[0]}`;
+                document.getElementById("author").textContent = "Autor: " + authorFormatted;
+            } else {
+                document.getElementById("author").textContent = "Autor: Não informado";
+            }
             // Verifica se há gêneros e os mostra
             document.getElementById("genres").textContent = "Gêneros: " + (data.subjects.length > 0 ? data.subjects.join(", ") : "Não informado");
             // Verifica se a capa do livro está disponível e atribui ao elemento img

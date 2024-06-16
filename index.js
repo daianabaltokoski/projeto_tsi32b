@@ -29,8 +29,16 @@ async function carregar() {
 // função para adicionar um ebook ao DOM
 function addEbook(ebook) {
     const { title, authors, formats } = ebook;
-    const authorName =
-        authors.length > 0 ? authors[0].name : "Autor não informado";
+    const authorName = authors.length > 0 ? formatAuthorName(authors[0].name) : "Autor não informado";
+
+function formatAuthorName(fullName) {
+    const nameParts = fullName.split(", ");
+    if (nameParts.length > 1) {
+        return `${nameParts[1]} ${nameParts[0]}`;
+    } else {
+        return fullName;
+    }
+}
     const coverImage =
         formats["image/jpeg"] ||
         "https://placehold.co/230x260/afc/ccc?text=Capa%20do%20Livro";
@@ -65,7 +73,7 @@ function handleDetalhesClick(ebookId) {
             title: 'Faça login',
             text: 'Você precisa estar logado para acessar esta página.',
             icon: 'warning',
-            timer: 2500,
+            timer: 3000,
             timerProgressBar: true,
             showConfirmButton: false
         }).then(() => {
