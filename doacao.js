@@ -6,7 +6,30 @@ document.addEventListener('DOMContentLoaded', function () {
     const paymentMethodSection = document.getElementById('paymentMethodSection');
     const successBanner = document.getElementById('successBanner');
     const confirmDonationButton = document.getElementById('confirmDonation');
+    const donorNameInput = document.getElementById('donorName');
 
+    // Recupera dados do localStorage e preenche o formulário
+    function recuperarDadosDoacao() {
+        const dadosDoacaoSalvos = JSON.parse(localStorage.getItem('dadosDoacao'));
+        if (dadosDoacaoSalvos) {
+            donorNameInput.value = dadosDoacaoSalvos.donorName;
+            const donationAmount = donationForm.querySelector(`input[name="donationAmount"][value="${dadosDoacaoSalvos.donationAmount}"]`);
+            if (donationAmount) {
+                donationAmount.checked = true;
+            }
+            const paymentMethod = donationForm.querySelector(`input[name="paymentMethod"][value="${dadosDoacaoSalvos.paymentMethod}"]`);
+            if (paymentMethod) {
+                paymentMethod.checked = true;
+            }
+        }
+    }
+
+    // Salva dados no localStorage
+    function salvarDadosDoacao(dadosDoacao) {
+        localStorage.setItem('dadosDoacao', JSON.stringify(dadosDoacao));
+    }
+
+    // Configurações e eventos do formulário
     choosePaymentMethodButton.addEventListener('click', function () {
         paymentMethodSection.style.display = 'block';
         choosePaymentMethodButton.style.display = 'none';
@@ -15,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     openModalButton.addEventListener('click', function () {
         const selectedAmount = donationForm.querySelector('input[name="donationAmount"]:checked');
         const selectedPaymentMethod = donationForm.querySelector('input[name="paymentMethod"]:checked');
-        const donorName = document.getElementById('donorName').value.trim();
+        const donorName = donorNameInput.value.trim();
         const nameRegex = /^[a-zA-Z\s]+$/;
 
         if (!nameRegex.test(donorName)) {
@@ -49,6 +72,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     setTimeout(function () {
                         successBanner.style.display = 'none';
                     }, 5000);
+
+                    // Salva os dados no localStorage
+                    const dadosDoacao = {
+                        donorName: donorName,
+                        donationAmount: selectedAmount.value,
+                        paymentMethod: selectedPaymentMethod.value
+                    };
+                    salvarDadosDoacao(dadosDoacao);
                 }
             });
         } else {
@@ -63,4 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
     paymentMethodSection.addEventListener('change', function () {
         openModalButton.disabled = !donationForm.querySelector('input[name="paymentMethod"]:checked');
     });
+
+    // Recupera os dados do localStorage ao carregar a página
+    recuperarDadosDoacao();
 });
