@@ -21,10 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (donationAmount) {
                 donationAmount.checked = true;
             }
-            const paymentMethod = donationForm.querySelector(`input[name="paymentMethod"][value="${dadosDoacaoSalvos.paymentMethod}"]`);
-            if (paymentMethod) {
-                paymentMethod.checked = true;
-            }
         }
     }
 
