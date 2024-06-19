@@ -5,8 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const choosePaymentMethodButton = document.getElementById('choosePaymentMethod');
     const paymentMethodSection = document.getElementById('paymentMethodSection');
     const successBanner = document.getElementById('successBanner');
-    const confirmDonationButton = document.getElementById('confirmDonation');
     const donorNameInput = document.getElementById('donorName');
+
+    $(document).ready(function() {
+        $('#customAmount').mask('000.000.000.000.000,00', { reverse: true });
+    });
+    
 
     // Recupera dados do localStorage e preenche o formulário
     function recuperarDadosDoacao() {
