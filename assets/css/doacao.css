@@ -10,3 +10,48 @@
 .img-page img:hover {
     transform: scale(1.1);
 }
+
+/* Estilo para o formulário de doação */
+#donationForm {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    padding-left: 160px;
+    padding-right: 160px;
+}
+
+#donationForm legend {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#donationForm .form-check {
+    margin-bottom: 10px;
+}
+
+#donationForm button {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#donationForm h2 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.btn:disabled {
+    background-color: #CCCCCC;
+    color: #555555;
+    border: none; 
+  }
+
+  #successBanner {
+    margin-top: 20px;
+  }
+
+  .card-img-top {
+    height: 25rem;
+    object-fit: cover;
+}
