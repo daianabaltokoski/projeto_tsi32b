@@ -11,6 +11,18 @@
       "email": "daianabalt@gmail.com",
       "senha": "123",
       "id": 2
+    },
+    {
+      "nome": "daiana",
+      "email": "daianabalt@gmail.com",
+      "senha": "123",
+      "id": 3
+    },
+    {
+      "nome": "daiane",
+      "email": "teste@gmail.com",
+      "senha": "654",
+      "id": 4
     }
   ]
 }
