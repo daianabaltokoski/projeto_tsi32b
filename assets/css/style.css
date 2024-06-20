@@ -61,8 +61,8 @@ main {
 
 .content {
     background-color: white;
-    height: 46rem;
-    padding: 2rem;
+    height: auto;
+    padding: 1rem;
     border-radius: 1rem;
     text-align: center;
     display: flex;
@@ -71,15 +71,16 @@ main {
 }
 
 .content p {
-    margin-top: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .content h2 {
-    margin: 3rem;
+    margin: 1rem;
 }
 
 .content .btn {
-    margin-top: auto;
+    margin-top: 1rem;
     margin-bottom: 3rem;
 }
 
