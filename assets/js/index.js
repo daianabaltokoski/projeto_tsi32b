@@ -45,7 +45,7 @@ function formatAuthorName(fullName) {
     const bookLink = formats["text/html"] || "#";
 
     const cardHtml = `
-        <div class="col-md-3 mb-4">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
             <div class="card h-100">
                 <a href="detalhes.html?id=${ebook.id}" onclick="handleDetalhesClick(${ebook.id}); return false;"> 
                     <img src="${coverImage}" class="card-img-top" alt="Capa do Livro">

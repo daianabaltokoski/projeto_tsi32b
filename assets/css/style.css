@@ -87,6 +87,7 @@ main {
 .img-page {
     margin-bottom: 2rem;
     margin-top: 2rem;
+
 }
 
 .img-rounded-10 {
@@ -103,4 +104,31 @@ footer {
 
 footer h6 {
     font-size: 0.8rem;   
+}
+
+.card-img-top {
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .card-img-top {
+        height: 30rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-img-top {
+        height: 28rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .card-img-top {
+        height: 24rem;
+    }
 }
