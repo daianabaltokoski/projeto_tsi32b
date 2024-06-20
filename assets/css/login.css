@@ -1,3 +1,7 @@
+main {
+    background-color: white;
+}
+
 .img-page {
     position: relative;
     overflow: hidden;
@@ -9,4 +13,20 @@
 
 .img-page img:hover {
     transform: scale(1.1);
+}
+
+#cadastroFormContainer {
+    margin-top: 2rem;
+}
+
+#cadastroForm input,
+#cadastroForm textarea,
+#loginForm input,
+#loginForm textarea {
+    margin-bottom: 2rem;
+}
+
+#titleLogin {
+    padding: 1rem;
+    color: #333;
 }

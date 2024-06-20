@@ -68,96 +68,96 @@
   </nav>
 
   <main class="container my-4">
-    <div class="row mx-auto">
-      <div class="col-lg-6 col-md-12 img-page mb-4 mb-lg-0 d-none d-md-flex align-items-center justify-content-center">
-        <img src="assets/images/login.jpg" class="img-fluid img-rounded-10" alt="Login" />
-      </div>
-      <div class="col-md-6 d-flex align-items-center">
-        <div class="container">
-          <div class="row mt-5">
-            <div class="col-md-6 offset-md-3">
-
-              <!-- Formulário de Login -->
-              <div class="card" id="loginFormContainer">
-                <div class="card-header">Login</div>
-                <div class="card-body">
-                  <form class="needs-validation" id="loginForm" novalidate>
-                    <div class="form-group">
-                      <label for="loginEmail">Email</label>
-                      <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp"
-                        placeholder="Digite seu email" required />
-                      <div class="invalid-feedback">
-                        Por favor, insira um email válido.
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="loginPassword">Senha</label>
-                      <input type="password" class="form-control" id="loginPassword" placeholder="Digite sua senha"
-                        required />
-                      <div class="invalid-feedback">
-                        Por favor, insira sua senha.
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                      Entrar
-                    </button>
-                    <div class="mt-2">
-                      <p>
-                        Não tem uma conta?
-                        <a href="#" id="showCadastro">Cadastre-se aqui</a>.
-                      </p>
-                    </div>
-                  </form>
-                </div>
-              </div>
-
-              <!-- Formulário de Cadastro -->
-              <div class="card mt-4" style="display: none" id="cadastroFormContainer">
-                <div class="card-header">Cadastro</div>
-                <div class="card-body">
-                  <form class="needs-validation" id="cadastroForm" novalidate>
-                    <div class="form-group">
-                      <label for="cadastroNome">Nome</label>
-                      <input type="text" class="form-control" id="cadastroNome" placeholder="Digite seu nome"
-                        required />
-                      <div class="invalid-feedback">
-                        Por favor, insira seu nome.
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="cadastroEmail">Email</label>
-                      <input type="email" class="form-control" id="cadastroEmail" aria-describedby="emailHelp"
-                        placeholder="Digite seu email" required />
-                      <div class="invalid-feedback">
-                        Por favor, insira um email válido.
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="cadastroPassword">Senha</label>
-                      <input type="password" class="form-control" id="cadastroPassword" placeholder="Digite sua senha"
-                        required />
-                      <div class="invalid-feedback">
-                        Por favor, insira uma senha.
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                      Cadastrar
-                    </button>
-                    <div class="mt-2">
-                      <p>
-                        Já tem uma conta?
-                        <a href="#" id="showLogin">Faça login aqui</a>.
-                      </p>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12 img-page mb-4 mb-lg-0 d-none d-md-flex align-items-center justify-content-center">
+            <img src="assets/images/login.jpg" class="img-fluid img-rounded-10" alt="Login" />
         </div>
-      </div>
+        <div class="col-lg-6 col-md-12 d-flex align-items-center justify-content-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+
+                        <!-- Formulário de Login -->
+                        <div class="card border-0" id="loginFormContainer">
+                            <h2 id="titleLogin">Login</h2>
+                            <div class="card-body">
+                                <form class="needs-validation" id="loginForm" novalidate>
+                                    <div class="form-group">
+                                        <label for="loginEmail">Email</label>
+                                        <input type="email" class="form-control" id="loginEmail"
+                                            aria-describedby="emailHelp" placeholder="Digite seu email" required />
+                                        <div class="invalid-feedback">
+                                            Por favor, insira um email válido.
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="loginPassword">Senha</label>
+                                        <input type="password" class="form-control" id="loginPassword"
+                                            placeholder="Digite sua senha" required />
+                                        <div class="invalid-feedback">
+                                            Por favor, insira sua senha.
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">
+                                        Entrar
+                                    </button>
+                                    <div class="mt-2">
+                                        <p>
+                                            Não tem uma conta?
+                                            <a href="#" id="showCadastro">Cadastre-se aqui</a>.
+                                        </p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Formulário de Cadastro -->
+                        <div class="card mt-4 border-0" style="display: none" id="cadastroFormContainer">
+                            <h2 id="titleLogin">Cadastro</h2>
+                            <div class="card-body">
+                                <form class="needs-validation" id="cadastroForm" novalidate>
+                                    <div class="form-group">
+                                        <label for="cadastroNome">Nome</label>
+                                        <input type="text" class="form-control" id="cadastroNome"
+                                            placeholder="Digite seu nome" required />
+                                        <div class="invalid-feedback">
+                                            Por favor, insira seu nome.
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cadastroEmail">Email</label>
+                                        <input type="email" class="form-control" id="cadastroEmail"
+                                            aria-describedby="emailHelp" placeholder="Digite seu email" required />
+                                        <div class="invalid-feedback">
+                                            Por favor, insira um email válido.
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cadastroPassword">Senha</label>
+                                        <input type="password" class="form-control" id="cadastroPassword"
+                                            placeholder="Digite sua senha" required />
+                                        <div class="invalid-feedback">
+                                            Por favor, insira uma senha.
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">
+                                        Cadastrar
+                                    </button>
+                                    <div class="mt-2">
+                                        <p>
+                                            Já tem uma conta?
+                                            <a href="#" id="showLogin">Faça login aqui</a>.
+                                        </p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </main>
+</main>
 
   <footer class="text-center text-white" style="background-color: #00825d">
     <div class="container">
