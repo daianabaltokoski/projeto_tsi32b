@@ -8,7 +8,7 @@ body {
 }
 header {
     background-color: white;
-    padding: 20px 0;
+    padding: 2rem 0;
 }
 .navbar {
     background-color: #00825D;
@@ -23,10 +23,10 @@ header {
     color: white !important;
 }
 .navbar-nav .nav-link .fa {
-    margin-right: 12px;
+    margin-right: 1.2rem;
 }
 .carousel-container {
-    margin-top: 20px;
+    margin-top: 2rem;
 }
 .carousel-control-prev,
 .carousel-control-next {
@@ -36,12 +36,12 @@ width: 5%;
 main {
     background-color: #f2efed;
     flex-grow: 1;
-    padding: 30px;
+    padding: 3rem;
 }
 
 .card-group .card {
     background-color: white;
-    margin: 10px;
+    margin: 1rem;
 }
 .card-group {
     justify-content: center;
@@ -61,9 +61,9 @@ main {
 
 .content {
     background-color: white;
-    height: 460px;
-    padding: 20px;
-    border-radius: 10px;
+    height: 46rem;
+    padding: 2rem;
+    border-radius: 1rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -71,35 +71,35 @@ main {
 }
 
 .content p {
-    margin-top: 20px;
+    margin-top: 2rem;
 }
 
 .content h2 {
-    margin: 30px;
+    margin: 3rem;
 }
 
 .content .btn {
     margin-top: auto;
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
 }
 
 .img-page {
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 .img-rounded-10 {
-    border-radius: 10px;
+    border-radius: 1rem;
 }
 
 footer {
     background-color: #00825D;
     color: white;
-    padding: 20px 0;
+    padding: 2rem 0;
     margin-top: auto;
-    font-size: 13px;
+    font-size: 1rem;
 }
 
 footer h6 {
-    font-size: 14px;   
+    font-size: 0.8rem;   
 }

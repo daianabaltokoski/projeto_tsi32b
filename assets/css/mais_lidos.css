@@ -1,11 +1,11 @@
 main {
     background-color: white;
     flex-grow: 1;
-    padding: 30px;
+    padding: 3rem;
 }
 
 .container-background {
     background-color: #f2efed;
-    padding: 20px;
-    border-radius: 5px;
+    padding: 2rem;
+    border-radius: 0.5rem;
 }
