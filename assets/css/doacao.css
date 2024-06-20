@@ -1,10 +1,17 @@
+main {
+    background-color: white;
+}
+
 .img-page {
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
 .img-page img {
     transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
 }
 
 .img-page img:hover {
@@ -15,9 +22,9 @@
 #donationForm {
     background-color: white;
     padding: 2.5rem;
-    border-radius: 10p0.625remx;
-    padding-left: 10vh;
-    padding-right: 10vw;
+    border-radius: 1rem;
+    max-width: 100%;
+    width: 100%;
 }
 
 #donationForm legend {
