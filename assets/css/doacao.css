@@ -47,10 +47,6 @@
     border: none; 
   }
 
-  #successBanner {
-    margin-top: 2rem;
-  }
-
   .card-img-top {
     height: 25rem;
     object-fit: cover;

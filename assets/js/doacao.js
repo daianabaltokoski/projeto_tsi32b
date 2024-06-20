@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     successBanner.style.display = 'block';
                     setTimeout(function () {
                         successBanner.style.display = 'none';
-                    }, 5000);
+                    }, 10000);
 
                     // Salva os dados no localStorage
                     const dadosDoacao = {
