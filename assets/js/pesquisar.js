@@ -17,9 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function performSearch(searchTerm, page = 1) {
+        showLoader();
         var firstTerm = searchTerm.toLowerCase().split(' ')[0];
 
-        fetch(`https://gutendex.com/books/?languages=pt&page=${page}`)
+        fetch(`https://gutendex.com/books/?languages=pt&page=${page}&search=${searchTerm}`)
             .then(function (response) {
                 return response.json();
             })
@@ -47,10 +48,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     var nextPage = page + 1;
                     performSearch(searchTerm, nextPage);
                 }
+                hideLoader();
             })
             .catch(function (error) {
                 console.error('Erro ao buscar dados da API:', error);
             });
+            
     }
 
     var searchResults = []; // Array global para armazenar todos os resultados

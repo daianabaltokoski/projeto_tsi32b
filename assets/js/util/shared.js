@@ -11,7 +11,6 @@ window.addEventListener('load',
     });
 });
 
-
 // Função para verificar se o usuário está logado
 function verificarLogin() {
   console.log()
@@ -28,4 +27,22 @@ function verificarLogin() {
   }
 
   return !!authUser
+}
+
+function showLoader() {
+  const div = document.createElement('div');
+  div.id = 'loader';
+  div.innerHTML = 
+  `<div class="spinner-border" role="status">
+    <span class="visually-hidden">Carregando...</span>
+  </div>`
+  const body = document.getElementsByTagName('body')[0];
+  body.appendChild(div);
+}
+
+function hideLoader() {
+  const loader = document.getElementById('loader');
+  if (loader) {
+    loader.remove();
+  }
 }

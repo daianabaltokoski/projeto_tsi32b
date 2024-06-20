@@ -2,6 +2,7 @@ let paginaAtualMaisBaixados = 1;
 
 // Função para carregar os livros mais baixados
 async function carregarMaisBaixados() {
+    showLoader();
     const response = await fetch(`https://gutendex.com/books/?languages=pt&sort=downloads&page=${paginaAtualMaisBaixados}`);
     const data = await response.json();
 
@@ -49,6 +50,7 @@ function formatAuthorName(fullName) {
 
         container.innerHTML += cardHtml;
     });
+    hideLoader();
 }
 
 // Função para lidar com o clique no botão "Detalhes"

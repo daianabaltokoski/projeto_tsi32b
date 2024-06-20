@@ -11,6 +11,7 @@ window.addEventListener('load', function () {
 
 // função para carregar ebooks
 async function carregar() {
+    showLoader()
     paginaAtual++;
     const response = await fetch(
         `https://gutendex.com/books/?languages=pt&page=${paginaAtual}`
@@ -18,12 +19,13 @@ async function carregar() {
     const data = await response.json();
 
     // total de ebooks no catálogo
-    const total = data.count;
+    // const total = data.count;
     // todos os ebooks que foram carregados, máximo de 32 por vez
     const results = data.results;
     for (const ebook of results) {
         addEbook(ebook);
     }
+    hideLoader();
 }
 
 // função para adicionar um ebook ao DOM
