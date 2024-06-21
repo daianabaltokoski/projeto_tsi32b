@@ -28,6 +28,7 @@ header {
 .carousel-container {
     margin-top: 2rem;
 }
+
 .carousel-control-prev,
 .carousel-control-next {
 width: 5%;
@@ -116,6 +117,7 @@ footer h6 {
 }
 
 #loader {
+    color: #014E4A;
     position: fixed;
     top: 0;
     bottom: 0;

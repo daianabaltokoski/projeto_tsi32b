@@ -13,7 +13,7 @@ main {
   }
 
   #book-cover:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
 
   #book-title {
@@ -21,11 +21,11 @@ main {
     padding-bottom: 2rem;
   }
 
-  #baixar {
+  #download {
     margin: 1.5rem;
   }
 
-  #ler-agora {
+  #read-now {
     margin: 1.5rem;
   }
 

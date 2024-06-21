@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    verificarLogin();
+    verifyLogin();
     const donationForm = document.getElementById('donationForm');
     const openModalButton = document.getElementById('openModal');
     const choosePaymentMethodButton = document.getElementById('choosePaymentMethod');
@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const successBanner = document.getElementById('successBanner');
     const donorNameInput = document.getElementById('donorName');
 
-    $(document).ready(function() {
+    $(function() {
         $('#customAmount').mask('000.000.000.000.000,00', { reverse: true });
     });
     
 
     // Recupera dados do localStorage e preenche o formulário
-    function recuperarDadosDoacao() {
+    function retrieveDonationData() {
         const dadosDoacaoSalvos = JSON.parse(localStorage.getItem('dadosDoacao'));
         if (dadosDoacaoSalvos) {
             donorNameInput.value = dadosDoacaoSalvos.donorName;
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Salva dados no localStorage
-    function salvarDadosDoacao(dadosDoacao) {
+    function saveDonationData(dadosDoacao) {
         localStorage.setItem('dadosDoacao', JSON.stringify(dadosDoacao));
     }
 
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         donationAmount: selectedAmount.value,
                         paymentMethod: selectedPaymentMethod.value
                     };
-                    salvarDadosDoacao(dadosDoacao);
+                    saveDonationData(dadosDoacao);
                 }
             });
         } else {
@@ -96,5 +96,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Recupera os dados do localStorage ao carregar a página
-    recuperarDadosDoacao();
+    retrieveDonationData();
 });

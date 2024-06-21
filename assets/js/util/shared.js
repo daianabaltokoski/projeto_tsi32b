@@ -7,23 +7,23 @@ window.addEventListener('load',
       event.preventDefault();
       console.log('clicado')
       localStorage.removeItem("authUser");
-      verificarLogin();
+      verifyLogin();
     });
 });
 
 // Função para verificar se o usuário está logado
-function verificarLogin() {
+function verifyLogin() {
   console.log()
   const authUser = localStorage.getItem("authUser");
 
   if (authUser) {
-    document.getElementById("nomeUsuario").textContent = authUser;
+    document.getElementById("userName").textContent = authUser;
     document.getElementById("entreOuCadastrese").style.display = "none";
 
-    document.getElementById("nomeUsuarioWrapper").style.display = "block";
+    document.getElementById("userNameWrapper").style.display = "block";
   } else {
     document.getElementById("entreOuCadastrese").style.display = "block";
-    document.getElementById("nomeUsuarioWrapper").style.display = "none";
+    document.getElementById("userNameWrapper").style.display = "none";
   }
 
   return !!authUser

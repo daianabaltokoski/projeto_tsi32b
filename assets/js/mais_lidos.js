@@ -1,7 +1,7 @@
 let paginaAtualMaisBaixados = 1;
 
 // Função para carregar os livros mais baixados
-async function carregarMaisBaixados() {
+async function loadTopEbooks() {
     showLoader();
     const response = await fetch(`https://gutendex.com/books/?languages=pt&sort=downloads&page=${paginaAtualMaisBaixados}`);
     const data = await response.json();
@@ -55,7 +55,7 @@ function formatAuthorName(fullName) {
 
 // Função para lidar com o clique no botão "Detalhes"
 function handleDetalhesClick(ebookId) {
-    if (verificarLogin()) {
+    if (verifyLogin()) {
         window.location.href = `detalhes.html?id=${ebookId}`;
     } else {
         Swal.fire({
@@ -75,9 +75,9 @@ function handleDetalhesClick(ebookId) {
 // Executar a função ao carregar a página
 window.addEventListener('load', () => {
     console.log('mais_lidos.js')
-    carregarMaisBaixados();
+    loadTopEbooks();
 
-    verificarLogin();
+    verifyLogin();
 });
 
 

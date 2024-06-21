@@ -9,6 +9,6 @@ window.addEventListener('load', function () {
         }
     });
 
-    verificarLogin();
+    verifyLogin();
 
 });

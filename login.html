@@ -31,8 +31,8 @@
               <p class="mt-4"><a href="login.html" class="text-decoration-none text-dark"> <i class="fas fa-user"
                     style="color: #00825D;"></i> Entre ou Cadastre-se</a></p>
             </div>
-            <div class="col" id="nomeUsuarioWrapper" style="display: none;">
-              <p class="mt-4">Olá, <span id="nomeUsuario"></span> | <a href="#" id="logoutLink">Sair</a></p>
+            <div class="col" id="userNameWrapper" style="display: none;">
+              <p class="mt-4">Olá, <span id="userName"></span> | <a href="#" id="logoutLink">Sair</a></p>
             </div>
           </div>
         </div>
@@ -112,29 +112,29 @@
                         </div>
 
                         <!-- Formulário de Cadastro -->
-                        <div class="card mt-4 border-0" style="display: none" id="cadastroFormContainer">
+                        <div class="card mt-4 border-0" style="display: none" id="registrationFormContainer">
                             <h2 id="titleLogin">Cadastro</h2>
                             <div class="card-body">
-                                <form class="needs-validation" id="cadastroForm" novalidate>
+                                <form class="needs-validation" id="registrationForm" novalidate>
                                     <div class="form-group">
-                                        <label for="cadastroNome">Nome</label>
-                                        <input type="text" class="form-control" id="cadastroNome"
+                                        <label for="registrationName">Nome</label>
+                                        <input type="text" class="form-control" id="registrationName"
                                             placeholder="Digite seu nome" required />
                                         <div class="invalid-feedback">
                                             Por favor, insira seu nome.
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="cadastroEmail">Email</label>
-                                        <input type="email" class="form-control" id="cadastroEmail"
+                                        <label for="registrationEmail">Email</label>
+                                        <input type="email" class="form-control" id="registrationEmail"
                                             aria-describedby="emailHelp" placeholder="Digite seu email" required />
                                         <div class="invalid-feedback">
                                             Por favor, insira um email válido.
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="cadastroPassword">Senha</label>
-                                        <input type="password" class="form-control" id="cadastroPassword"
+                                        <label for="registrationPassword">Senha</label>
+                                        <input type="password" class="form-control" id="registrationPassword"
                                             placeholder="Digite sua senha" required />
                                         <div class="invalid-feedback">
                                             Por favor, insira uma senha.

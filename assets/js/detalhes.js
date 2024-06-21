@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    verificarLogin();
+    verifyLogin();
     // Endpoint da API para buscar os detalhes do livro
     const apiUrl = "https://gutendex.com/books/";
 
@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
     fetch(apiUrl + bookId)
         .then(response => response.json())
         .then(data => {
-            console.log("Detalhes do Livro:", data);
             // Atualiza os elementos HTML com os detalhes do livro
             document.getElementById("book-title").textContent = data.title;
             // Verifica se há autores e mostra o primeiro autor
@@ -36,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             // Adiciona a funcionalidade aos botões
-            document.getElementById("ler-agora").addEventListener("click", function() {
+            document.getElementById("read-now").addEventListener("click", function() {
                 const readUrl = data.formats["text/html"] || data.formats["text/html; charset=iso-8859-1"];
                 if (readUrl) {
                     window.open(readUrl, '_blank');
@@ -45,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
-            document.getElementById("baixar").addEventListener("click", function() {
+            document.getElementById("download").addEventListener("click", function() {
                 const downloadUrl = data.formats["application/epub+zip"] || data.formats["application/pdf"] || data.formats["application/x-mobipocket-ebook"];
                 if (downloadUrl) {
                     window.open(downloadUrl, '_blank');

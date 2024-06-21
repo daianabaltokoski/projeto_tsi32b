@@ -1,12 +1,12 @@
 // Função para alternar entre os formulários de login e cadastro
 function toggleForms() {
     const loginForm = document.getElementById("loginFormContainer");
-    const cadastroForm = document.getElementById("cadastroFormContainer");
+    const registrationForm = document.getElementById("registrationFormContainer");
 
     loginForm.style.display =
         loginForm.style.display === "none" ? "block" : "none";
-    cadastroForm.style.display =
-        cadastroForm.style.display === "none" ? "block" : "none";
+    registrationForm.style.display =
+        registrationForm.style.display === "none" ? "block" : "none";
     
     // Preencher o e-mail no formulário de login se estiver disponível no localStorage
     if (loginForm.style.display === "block") {
@@ -26,12 +26,12 @@ async function cadastrarUsuario() {
     });
 
     // Check if the form is valid
-    if (document.getElementById("cadastroForm").checkValidity()) {
-        const nome = document.getElementById("cadastroNome").value.trim();
-        const email = document.getElementById("cadastroEmail").value.trim();
-        const senha = document.getElementById("cadastroPassword").value.trim();
+    if (document.getElementById("registrationForm").checkValidity()) {
+        const nome = document.getElementById("registrationName").value.trim();
+        const email = document.getElementById("registrationEmail").value.trim();
+        const senha = document.getElementById("registrationPassword").value.trim();
 
-        const nameRegex = /^[a-zA-Z\s]+$/;
+        const nameRegex = /^[a-zA-Z\u00C0-\u017F\s]{3,}$/;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const senhaRegex = /^\S{3,}$/;
 
@@ -39,7 +39,7 @@ async function cadastrarUsuario() {
             Swal.fire({
                 icon: 'error',
                 title: 'Erro!',
-                text: 'Por favor, insira um nome válido (apenas letras e espaços).'
+                text: 'Por favor, insira um nome válido com no mínimo 3 caracteres (apenas letras e espaços).'
             });
             return;
         }
@@ -194,7 +194,7 @@ window.addEventListener('load', function () {
 
     // Event listener para o formulário de cadastro
     document
-        .getElementById("cadastroForm")
+        .getElementById("registrationForm")
         .addEventListener("submit", function (event) {
             event.preventDefault();
             cadastrarUsuario();
@@ -207,7 +207,7 @@ window.addEventListener('load', function () {
     }
 
     // Chamar a função de verificação de login ao carregar a página
-    verificarLogin();
+    verifyLogin();
 });
 
 async function apiCadastraUsuario(novoUsuario) {

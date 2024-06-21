@@ -2,15 +2,15 @@ let paginaAtual = 0;
 
 window.addEventListener('load', function () {
     console.log('index.js')
-    // Executar a função "carregar" quando a página já estiver carregada
-    document.addEventListener("DOMContentLoaded", carregar);
+    // Executar a função carregar (loadEbooks) quando a página já estiver carregada
+    document.addEventListener("DOMContentLoaded", loadEbooks);
 
-    verificarLogin();
-    carregar();
+    verifyLogin();
+    loadEbooks();
 });
 
 // função para carregar ebooks
-async function carregar() {
+async function loadEbooks() {
     showLoader()
     paginaAtual++;
     const response = await fetch(
@@ -68,7 +68,7 @@ function formatAuthorName(fullName) {
 
 // Função para lidar com o clique no botão "Detalhes"
 function handleDetalhesClick(ebookId) {
-    if (verificarLogin()) {
+    if (verifyLogin()) {
         window.location.href = `detalhes.html?id=${ebookId}`;
     } else {
         Swal.fire({
@@ -85,7 +85,7 @@ function handleDetalhesClick(ebookId) {
 }
 
 // Função para verificar o status de login (simulada)
-function verificarLogin() {
+function verifyLogin() {
     // Implementação simulada de verificação de login
     return false; // Retornando falso para simular usuário não logado
 }

@@ -15,12 +15,12 @@ main {
     transform: scale(1.1);
 }
 
-#cadastroFormContainer {
+#registrationFormContainer {
     margin-top: 2rem;
 }
 
-#cadastroForm input,
-#cadastroForm textarea,
+#registrationForm input,
+#registrationForm textarea,
 #loginForm input,
 #loginForm textarea {
     margin-bottom: 2rem;

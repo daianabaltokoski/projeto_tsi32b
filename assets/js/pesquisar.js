@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    verificarLogin();
+    verifyLogin();
     const urlParams = new URLSearchParams(window.location.search);
     const searchTerm = urlParams.get('q');
 
