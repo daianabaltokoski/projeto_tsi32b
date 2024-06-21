@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function performSearch(searchTerm, page = 1) {
         showLoader();
-        var firstTerm = searchTerm.toLowerCase().split(' ')[0];
+        const query = encodeURIComponent(searchTerm);
 
-        fetch(`https://gutendex.com/books/?languages=pt&page=${page}&search=${firstTerm}`)
+        fetch(`https://gutendex.com/books/?languages=pt&page=${page}&search=${query}`)
             .then(function (response) {
                 return response.json();
             })
