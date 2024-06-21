@@ -5,6 +5,12 @@
       "email": "daianabalt@gmail.com",
       "senha": "123",
       "id": 1
+    },
+    {
+      "nome": "João",
+      "email": "kloi@email.com",
+      "senha": "321",
+      "id": 2
     }
   ]
 }

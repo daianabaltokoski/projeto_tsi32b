@@ -38,7 +38,7 @@ function showLoader() {
   div.appendTo('body');
 }
 
-// Função para ocultar o ícone de carregaemto
+// Função para ocultar o ícone de carregamento
 function hideLoader() {
   $('#loader').remove();
 }

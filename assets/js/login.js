@@ -25,7 +25,7 @@ async function cadastrarUsuario() {
         form.classList.add("was-validated");
     });
 
-    // Check if the form is valid
+    // Checagem de formulário
     if (document.getElementById("registrationForm").checkValidity()) {
         const nome = document.getElementById("registrationName").value.trim();
         const email = document.getElementById("registrationEmail").value.trim();
@@ -103,7 +103,7 @@ async function realizarLogin() {
         form.classList.add("was-validated");
     });
 
-    // Check if the form is valid
+    // Checagem formulário
     if (document.getElementById("loginForm").checkValidity()) {
         const email = document.getElementById("loginEmail").value.trim();
         const senha = document.getElementById("loginPassword").value.trim();
