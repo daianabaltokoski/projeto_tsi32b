@@ -7,7 +7,7 @@ function toggleForms() {
         loginForm.style.display === "none" ? "block" : "none";
     registrationForm.style.display =
         registrationForm.style.display === "none" ? "block" : "none";
-    
+
     // Preencher o e-mail no formulário de login se estiver disponível no localStorage
     if (loginForm.style.display === "block") {
         const email = localStorage.getItem('emailCadastro');

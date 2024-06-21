@@ -1,28 +1,10 @@
 {
   "users": [
     {
-      "nome": "João",
-      "email": "joao@email.com",
-      "senha": "321",
-      "id": 1
-    },
-    {
       "nome": "Daiana",
       "email": "daianabalt@gmail.com",
       "senha": "123",
-      "id": 2
-    },
-    {
-      "nome": "joao",
-      "email": "kloi@email.com",
-      "senha": "123",
-      "id": 3
-    },
-    {
-      "nome": "João",
-      "email": "kloi@email.com",
-      "senha": "654",
-      "id": 4
+      "id": 1
     }
   ]
 }

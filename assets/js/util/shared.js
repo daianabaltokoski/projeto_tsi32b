@@ -1,15 +1,13 @@
 window.addEventListener('load',
-  function() {
-  console.log('shared.js')
-  document
-    .getElementById("logoutLink")
-    .addEventListener("click", function (event) {
-      event.preventDefault();
-      console.log('clicado')
-      localStorage.removeItem("authUser");
-      verifyLogin();
-    });
-});
+  function () {
+    document
+      .getElementById("logoutLink")
+      .addEventListener("click", function (event) {
+        event.preventDefault();
+        localStorage.removeItem("authUser");
+        verifyLogin();
+      });
+  });
 
 // Função para verificar se o usuário está logado
 function verifyLogin() {
@@ -29,17 +27,19 @@ function verifyLogin() {
   return !!authUser
 }
 
+// Função para mostrar o ícone de carregaemto
 function showLoader() {
   const div = document.createElement('div');
   div.id = 'loader';
-  div.innerHTML = 
-  `<div class="spinner-border" role="status">
+  div.innerHTML =
+    `<div class="spinner-border" role="status">
     <span class="visually-hidden">Carregando...</span>
   </div>`
   const body = document.getElementsByTagName('body')[0];
   body.appendChild(div);
 }
 
+// Função para ocultar o ícone de carregaemto
 function hideLoader() {
   const loader = document.getElementById('loader');
   if (loader) {

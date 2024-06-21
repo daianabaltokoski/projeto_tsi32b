@@ -51,10 +51,10 @@ main {
 .btn:disabled {
     background-color: #CCCCCC;
     color: #555555;
-    border: none; 
-  }
+    border: none;
+}
 
-  .card-img-top {
+.card-img-top {
     height: 25rem;
     object-fit: cover;
 }

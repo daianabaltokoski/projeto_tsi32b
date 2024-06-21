@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(function (error) {
                 console.error('Erro ao buscar dados da API:', error);
             });
-            
+
     }
 
     var searchResults = []; // Array global para armazenar todos os resultados

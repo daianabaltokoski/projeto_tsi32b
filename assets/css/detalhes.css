@@ -1,31 +1,30 @@
 main {
-    background-color: white;
+  background-color: white;
 }
 
 #book-cover {
-    width: 60vw;
-    max-width: 20rem;
-    height: auto;
-    margin-bottom: 4rem;
-    border-radius: 1rem;
-    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-  }
+  width: 60vw;
+  max-width: 20rem;
+  height: auto;
+  margin-bottom: 4rem;
+  border-radius: 1rem;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
 
-  #book-cover:hover {
-    transform: scale(1.1);
-  }
+#book-cover:hover {
+  transform: scale(1.1);
+}
 
-  #book-title {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
+#book-title {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 
-  #download {
-    margin: 1.5rem;
-  }
+#download {
+  margin: 1.5rem;
+}
 
-  #read-now {
-    margin: 1.5rem;
-  }
-
+#read-now {
+  margin: 1.5rem;
+}

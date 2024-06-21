@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     verifyLogin();
     // Endpoint da API para buscar os detalhes do livro
     const apiUrl = "https://gutendex.com/books/";
@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const authorNameParts = data.authors[0].name.split(", ");
                 const authorFormatted = `${authorNameParts[1]} ${authorNameParts[0]}`;
                 document.getElementById("author").textContent = "Autor: " + authorFormatted;
+
             } else {
                 document.getElementById("author").textContent = "Autor: Não informado";
             }
@@ -34,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById("book-cover").src = "https://via.placeholder.com/300";
             }
 
-            // Adiciona a funcionalidade aos botões
-            document.getElementById("read-now").addEventListener("click", function() {
+            // Adiciona a funcionalidade aos botões ler agora e baixar
+            document.getElementById("read-now").addEventListener("click", function () {
                 const readUrl = data.formats["text/html"] || data.formats["text/html; charset=iso-8859-1"];
                 if (readUrl) {
                     window.open(readUrl, '_blank');
@@ -44,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
-            document.getElementById("download").addEventListener("click", function() {
+            document.getElementById("download").addEventListener("click", function () {
                 const downloadUrl = data.formats["application/epub+zip"] || data.formats["application/pdf"] || data.formats["application/x-mobipocket-ebook"];
                 if (downloadUrl) {
                     window.open(downloadUrl, '_blank');

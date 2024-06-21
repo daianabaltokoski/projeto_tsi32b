@@ -18,18 +18,15 @@ async function loadTopEbooks() {
         const { id, title, authors, formats, download_count } = book;
         const authorName = authors.length > 0 ? formatAuthorName(authors[0].name) : "Autor desconhecido";
 
-function formatAuthorName(fullName) {
-    // Dividir o nome completo do autor em partes
-    const nameParts = fullName.split(", ");
-    // Verificar se o nome possui sobrenome
-    if (nameParts.length > 1) {
-        // Formatar como "Nome Sobrenome"
-        return `${nameParts[1]} ${nameParts[0]}`;
-    } else {
-        // Se não houver sobrenome identificado, retornar o nome completo
-        return fullName;
-    }
-}
+        // Função para formatar nome do autor para nome e sobrenome
+        function formatAuthorName(fullName) {
+            const nameParts = fullName.split(", ");
+            if (nameParts.length > 1) {
+                return `${nameParts[1]} ${nameParts[0]}`;
+            } else {
+                return fullName;
+            }
+        }
         const coverImage = formats["image/jpeg"] || "https://placehold.co/230x260/afc/ccc?text=Capa%20do%20Livro";
 
         const cardHtml = `

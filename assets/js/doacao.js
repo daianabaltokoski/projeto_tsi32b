@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 cancelButtonAriaLabel: "Cancelar"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // Ação após confirmação
+                    // Após confirmação mostra o banner de sucesso
                     successBanner.style.display = 'block';
                     setTimeout(function () {
                         successBanner.style.display = 'none';

@@ -9,21 +9,3 @@ main {
     padding: 20px;
     border-radius: 5px;
 }
-
-@media (min-width: 768px) {
-    .card-img-top {
-        height: 30rem;
-    }
-}
-
-@media (min-width: 992px) {
-    .card-img-top {
-        height: 28rem;
-    }
-}
-
-@media (min-width: 1400px) {
-    .card-img-top {
-        height: 24rem;
-    }
-}

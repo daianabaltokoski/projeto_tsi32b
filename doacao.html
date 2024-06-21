@@ -79,53 +79,63 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         <div class="row mx-auto align-items-center">
-            <div class="col-lg-6 col-md-12 img-page mb-4 mb-lg-0 d-none d-md-flex align-items-center justify-content-center">
+            <div
+                class="col-lg-6 col-md-12 img-page mb-4 mb-lg-0 d-none d-md-flex align-items-center justify-content-center">
                 <img src="assets/images/doação.jpg" class="img-fluid img-rounded-10" alt="Doação">
             </div>
-            
+
             <div class="col-lg-6 col-md-12 d-flex align-items-center justify-content-center">
                 <div class="w-100">
                     <form id="donationForm">
                         <h2>Faça uma Doação</h2>
                         <fieldset class="mb-3">
                             <legend>Nome do Doador</legend>
-                            <input type="text" class="form-control" id="donorName" name="donorName" placeholder="Seu nome">
+                            <input type="text" class="form-control" id="donorName" name="donorName"
+                                placeholder="Seu nome">
                         </fieldset>
                         <fieldset class="mb-3">
                             <legend>Valor da Doação</legend>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="donationAmount" id="donation1" value="R$1">
+                                <input class="form-check-input" type="radio" name="donationAmount" id="donation1"
+                                    value="R$1">
                                 <label class="form-check-label" for="donation1">R$1</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="donationAmount" id="donation10" value="R$10">
+                                <input class="form-check-input" type="radio" name="donationAmount" id="donation10"
+                                    value="R$10">
                                 <label class="form-check-label" for="donation10">R$10</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="donationAmount" id="donation50" value="R$50">
+                                <input class="form-check-input" type="radio" name="donationAmount" id="donation50"
+                                    value="R$50">
                                 <label class="form-check-label" for="donation50">R$50</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="donationAmount" id="donation100" value="R$100">
+                                <input class="form-check-input" type="radio" name="donationAmount" id="donation100"
+                                    value="R$100">
                                 <label class="form-check-label" for="donation100">R$100</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="donationAmount" id="otherAmount" value="Outro">
+                                <input class="form-check-input" type="radio" name="donationAmount" id="otherAmount"
+                                    value="Outro">
                                 <label class="form-check-label" for="otherAmount">Outro Valor</label>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">R$</span>
-                                    <input type="text" class="form-control" id="customAmount" placeholder="Digite o valor">
+                                    <input type="text" class="form-control" id="customAmount"
+                                        placeholder="Digite o valor">
                                 </div>
                             </div>
                         </fieldset>
                         <fieldset class="mb-3 text-start" id="paymentMethodSection" style="display: none;">
                             <legend>Meio de Pagamento</legend>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="paymentMethod" id="credito" value="credito">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="credito"
+                                    value="credito">
                                 <label class="form-check-label" for="credito">Cartão de Crédito</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="paymentMethod" id="debito" value="debito">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="debito"
+                                    value="debito">
                                 <label class="form-check-label" for="debito">Cartão de Débito</label>
                             </div>
                             <div class="form-check">
@@ -133,7 +143,8 @@
                                 <label class="form-check-label" for="pix">PIX</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="paymentMethod" id="deposito" value="deposito">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="deposito"
+                                    value="deposito">
                                 <label class="form-check-label" for="deposito">Depósito Bancário</label>
                             </div>
                         </fieldset>
@@ -145,8 +156,8 @@
             </div>
         </div>
     </main>
-    
-    
+
+
 
     <footer class="text-center text-white" style="background-color: #00825D;">
         <div class="container">

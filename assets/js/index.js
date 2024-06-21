@@ -17,10 +17,6 @@ async function loadEbooks() {
         `https://gutendex.com/books/?languages=pt&page=${paginaAtual}`
     );
     const data = await response.json();
-
-    // total de ebooks no catálogo
-    // const total = data.count;
-    // todos os ebooks que foram carregados, máximo de 32 por vez
     const results = data.results;
     for (const ebook of results) {
         addEbook(ebook);
