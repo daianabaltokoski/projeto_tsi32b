@@ -20,35 +20,24 @@ document.addEventListener('DOMContentLoaded', function () {
         showLoader();
         var firstTerm = searchTerm.toLowerCase().split(' ')[0];
 
-        fetch(`https://gutendex.com/books/?languages=pt&page=${page}&search=${searchTerm}`)
+        fetch(`https://gutendex.com/books/?languages=pt&page=${page}&search=${firstTerm}`)
             .then(function (response) {
                 return response.json();
             })
             .then(function (data) {
-                var filteredResults = data.results.filter(function (livro) {
-                    var titleMatch = livro.title.toLowerCase().includes(firstTerm);
-                    var authorMatch = livro.authors.length > 0 && livro.authors.some(function (author) {
-                        var authorName = author.name.toLowerCase();
-                        var authorNames = authorName.split(' ');
-                        return authorNames.some(function (name) {
-                            return name.includes(firstTerm);
-                        });
-                    });
-                    return titleMatch || authorMatch;
-                });
 
                 // Adiciona os resultados ao array global
-                searchResults = searchResults.concat(filteredResults);
+                searchResults = searchResults.concat(data.results);
 
                 // Exibe os resultados à medida que são encontrados
                 displaySearchResults(searchResults);
 
                 // Verifica se há mais páginas e continua a busca nelas
+                hideLoader();
                 if (data.next) {
                     var nextPage = page + 1;
                     performSearch(searchTerm, nextPage);
                 }
-                hideLoader();
             })
             .catch(function (error) {
                 console.error('Erro ao buscar dados da API:', error);
