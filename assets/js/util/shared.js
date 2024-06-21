@@ -27,22 +27,18 @@ function verifyLogin() {
   return !!authUser
 }
 
-// Função para mostrar o ícone de carregaemto
+// Função para mostrar o ícone de carregamento
 function showLoader() {
-  const div = document.createElement('div');
-  div.id = 'loader';
-  div.innerHTML =
-    `<div class="spinner-border" role="status">
-    <span class="visually-hidden">Carregando...</span>
-  </div>`
-  const body = document.getElementsByTagName('body')[0];
-  body.appendChild(div);
+  const div = $(`
+    <div id="loader">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Carregando...</span>
+      </div>
+    </div>`);
+  div.appendTo('body');
 }
 
 // Função para ocultar o ícone de carregaemto
 function hideLoader() {
-  const loader = document.getElementById('loader');
-  if (loader) {
-    loader.remove();
-  }
+  $('#loader').remove();
 }
