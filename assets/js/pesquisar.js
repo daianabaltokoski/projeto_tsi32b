@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             results.forEach(function (livro) {
                 var colDiv = document.createElement('div');
-                colDiv.classList.add('col-12', 'col-md-6', 'col-lg-4', 'col-xl-3', 'mb-4');
+                colDiv.classList.add('col-6', 'col-md-6', 'col-lg-4', 'col-xl-3', 'mb-4');
                 colDiv.innerHTML = `
                     <div class="card h-100">
                         <a href="detalhes.html?id=${livro.id}"> 

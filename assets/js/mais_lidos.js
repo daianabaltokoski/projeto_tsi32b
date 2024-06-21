@@ -30,7 +30,7 @@ async function loadTopEbooks() {
         const coverImage = formats["image/jpeg"] || "https://placehold.co/230x260/afc/ccc?text=Capa%20do%20Livro";
 
         const cardHtml = `
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+            <div class="col-6 col-md-6 col-lg-4 col-xl-3 mb-4">
                 <div class="card h-100">
                     <a href="detalhes.html?id=${id}" onclick="handleDetalhesClick(${id}); return false;">
                         <img src="${coverImage}" class="card-img-top" alt="Capa do Livro">

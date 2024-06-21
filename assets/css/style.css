@@ -9,7 +9,7 @@ body {
 
 header {
     background-color: white;
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
 .navbar {
@@ -141,6 +141,12 @@ footer h6 {
 #loader>div {
     width: 5rem;
     height: 5rem;
+}
+
+@media (min-width: 571px) {
+    .card-img-top {
+        height: 20rem;
+    }
 }
 
 @media (min-width: 768px) {
