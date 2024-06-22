@@ -8,9 +8,13 @@ Inspiração: loja.skeelo.com
 
 https://www.figma.com/file/cJ6JHMfpyNe5x8Cge9sllg/FreeLivro?type=design&node-id=0-1&mode=design&t=MZZCzB05mqZcUPwF-0
 
-Vídeo: https://youtu.be/3N54gK0sSec
+## Vídeo
 
-Git Pages: https://daianabaltokoski.github.io/projeto_tsi32b/
+https://youtu.be/3N54gK0sSec
+
+## Git Pages
+
+https://daianabaltokoski.github.io/projeto_tsi32b/
 
 ## Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
